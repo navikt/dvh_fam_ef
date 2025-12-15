@@ -64,8 +64,6 @@ sources:
         description: 'inneholder meta_data for tilleggsstønader'
       - name: fam_ts_fagsak
         description: 'inneholder vedtaksinformasjon'
-      - name: fam_ts_meta_data
-        description: 'Inneholder meta_data for tilleggsstønader'
       - name: fam_ts_barn
         description: 'Inneholder informasjon om barna som kommer i vedtaket'
       - name: fam_ts_ur_utbetaling
