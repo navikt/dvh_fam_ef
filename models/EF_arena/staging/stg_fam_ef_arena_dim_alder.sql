@@ -1,5 +1,5 @@
 with stg_fam_ef_arena_dim_alder as (
-  select * from {{ source ('kode_verk','dim_alder') }}
+  select * from {{ source ('dt_kodeverk','dim_alder') }}
 ),
 
 final as (

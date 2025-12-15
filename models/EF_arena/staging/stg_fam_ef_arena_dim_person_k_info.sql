@@ -1,5 +1,5 @@
 with stg_fam_ef_arena_dim_person_k_info as (
-  select * from {{ source ('dt_person_arena', 'dim_person_kontaktinfo') }}
+  select * from {{ source ('dt_person', 'dim_person_kontaktinfo') }}
 ),
 
 final as (
