@@ -79,9 +79,11 @@ fakta_per_mottaker as (
 
        ,max(case when stonadstype = 'BARNETILSYN' then ekstern_behandling_id end) bt_ekstern_behandling_id
        ,max(case when stonadstype = 'LÆREMIDLER' then ekstern_behandling_id end) lm_ekstern_behandling_id
+       ,max(case when stonadstype in ('DAGLIG_REISE_TSO','DAGLIG_REISE_TSR') then ekstern_behandling_id end) dr_ekstern_behandling_id
 
        ,max(case when stonadstype = 'BARNETILSYN' then fagsak_id end) bt_fagsak_id
        ,max(case when stonadstype = 'LÆREMIDLER' then fagsak_id end) lm_fagsak_id
+       ,max(case when stonadstype in ('DAGLIG_REISE_TSO','DAGLIG_REISE_TSR') then fagsak_id end) dr_fagsak_id
 
        ,sum(case when stonadstype = 'BARNETILSYN' and to_char(dato_utbet_fom, 'yyyymm') = periode then belop else 0 end) tsotilbarn
        ,sum(case when stonadstype = 'BARNETILSYN' and to_char(dato_utbet_fom, 'yyyymm') < periode then belop else 0 end) tsotilbarn_etterbetalt
@@ -89,6 +91,9 @@ fakta_per_mottaker as (
        ,sum(case when stonadstype = 'LÆREMIDLER' and to_char(dato_utbet_fom, 'yyyymm') <= periode then belop else 0 end) tsolmidler --tsolmidler = TSOLMIDLER+TSOLMIDLER_ETTERBETALT
        --,sum(case when stonadstype = 'LÆREMIDLER' and to_char(dato_utbet_fom, 'yyyymm') < periode then belop else 0 end) tsolmidler_etterbetalt
        ,0 tsolmidler_etterbetalt
+
+       ,sum(case when stonadstype in ('DAGLIG_REISE_TSO','DAGLIG_REISE_TSR') and to_char(dato_utbet_fom, 'yyyymm') = periode then belop else 0 end) tsodagreis
+       ,sum(case when stonadstype in ('DAGLIG_REISE_TSO','DAGLIG_REISE_TSR')  and to_char(dato_utbet_fom, 'yyyymm') < periode then belop else 0 end) tsodagreis_etterbetalt
 
        ,sum(belop) total_belop
        ,max(aktivitet) aktivitet
