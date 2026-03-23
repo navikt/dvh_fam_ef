@@ -8,6 +8,10 @@ version: '1.0.0'
 # This setting configures which "profile" dbt uses for this project.
 profile: 'dvh_fam_ef'
 
+vars:
+  periode: 202602
+  gyldig_flagg: 1
+
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
