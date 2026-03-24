@@ -15,8 +15,6 @@ sources:
         description: ''
       - name: dim_kjonn
         description: 'inneholder informasjon om kjonn mann, kvinne, ukjent'
-      - name: dim_alder
-        description: 'inneholder informasjon om alderen til brukere'
       - name: dim_geografi
         description: 'inneholder geografiske informasjon, bla fylke_navn, kommune_nr osv '
       - name: dim_person
@@ -38,6 +36,7 @@ sources:
       - name: dvh_person_ident_off_id_ikke_skjermet
         description: 'Inneholder informasjon om personer som er ikke skjemet, bl.a fk_person1, off_id'
       - name: dim_person
+      - name: ident_off_id_til_fk_person1
 
   - name: fam_bt
     schema: dvh_fam_bt
@@ -77,12 +76,6 @@ sources:
       - name: fam_ts_arsaker_avslag_v2
       - name: fam_ts_arsaker_opphor_v2
 
-  - name: ur
-    schema: dvh_ur
-    tables:
-      - name: fak_ur_utbetaling
-        description: 'Et view som inneholder utbetalingers detaljier'
-      - name: DIM_KONTO_UR
 
 
 

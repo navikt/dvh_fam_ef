@@ -51,7 +51,7 @@ pre_final as (
     kafka_partition
   from
     kolonner
-  left outer join dt_person.ident_off_id_til_fk_person1 b on
+  left outer join {{ source('dt_person', 'ident_off_id_til_fk_person1') }} b on
     kolonner.person_ident=b.off_id
     and b.gyldig_fra_dato<=kolonner.kafka_mottatt_dato
     and b.gyldig_til_dato>=kolonner.kafka_mottatt_dato

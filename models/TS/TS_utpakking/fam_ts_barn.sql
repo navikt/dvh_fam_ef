@@ -31,7 +31,7 @@ til_fk_person1 as (
     fnr,
     nvl(ident.fk_person1, -1) fk_person1
   from pre_final  p
-  left outer join dt_person.ident_off_id_til_fk_person1 ident
+  left outer join {{ source('dt_person', 'ident_off_id_til_fk_person1') }} ident
   on p.fnr = ident.off_id
   and p.endret_tid between ident.gyldig_fra_dato and ident.gyldig_til_dato
   and ident.skjermet_kode = 0

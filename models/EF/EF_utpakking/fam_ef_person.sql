@@ -36,7 +36,7 @@ pre_final as (
     kafka_partition,
     termindato
   from pre_final_barn_person  p
-  left outer join dt_person.ident_off_id_til_fk_person1 ident
+  left outer join {{ source('dt_person', 'ident_off_id_til_fk_person1') }} ident
   on p.person_ident = ident.off_id
   and p.kafka_mottatt_dato between ident.gyldig_fra_dato and ident.gyldig_til_dato
   and ident.skjermet_kode = 0
