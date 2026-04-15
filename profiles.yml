@@ -1,16 +1,38 @@
 dvh_fam_ef:
   target: "{{env_var('DBT_DB_TARGET')}}"
   outputs:
-    knast:
-      host: "{{env_var('DBT_DB_HOST')}}"
-      password: placeholder
-      port: "{{env_var('DBT_DB_PORT')}}"
-      protocol: tcp
-      schema: dvh_fam_ungdom
-      service: "{{env_var('DBT_ENV_SERVICE')}}"
-      database: "{{env_var('DBT_DB_NAME')}}"
-      threads: 8
+    U:
       type: oracle
       user: "{{env_var('DBT_ENV_SECRET_USER')}}"
+      pass: "{{env_var('DBT_ENV_SECRET_PASS')}}"
+      protocol: tcp
+      host: dmv04-scan.adeo.no
+      port: 1521
+      dbname: dwhu1
+      service: ccfdwhu1
+      schema: "{{env_var('DBT_DB_SCHEMA')}}"
+      threads: 4
+    R:
+      type: oracle
+      user: "{{env_var('DBT_ENV_SECRET_USER')}}"
+      pass: "{{env_var('DBT_ENV_SECRET_PASS')}}"
+      protocol: tcp
+      host: dmv04-scan.adeo.no
+      port: 1521
+      dbname: dwhpr
+      service: dwhr_ha
+      schema: "{{env_var('DBT_DB_SCHEMA')}}"
+      threads: 4
+    P:
+      type: oracle
+      user: "{{env_var('DBT_ENV_SECRET_USER')}}"
+      pass: "{{env_var('DBT_ENV_SECRET_PASS')}}"
+      protocol: tcp
+      host: dmv03-scan.adeo.no
+      port: 1521
+      dbname: dwhpr
+      service: dwh_ha
+      schema: "{{env_var('DBT_DB_SCHEMA')}}"
+      threads: 4
 config:
   send_anonymous_usage_stats: False
