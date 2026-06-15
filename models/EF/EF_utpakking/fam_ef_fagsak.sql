@@ -32,6 +32,7 @@ select * from ef_meta_data,
         ,medlem_Mer_Enn_5_Aar_Eos        VARCHAR2 PATH '$.eøsUnntak.medlemMerEnn5ÅrEøs'
         ,medlem_Mer_Enn_5_Aar_Eos_Annen_Forelder_Trygdedekket_I_Norge VARCHAR2 PATH '$.eøsUnntak.medlemMerEnn5ÅrEøsAnnenForelderTrygdedekketINorge'
         ,oppholder_Seg_I_Annet_Eos_Land  VARCHAR2 PATH '$.eøsUnntak.oppholderSegIAnnetEøsLand'
+        ,er_regel_endring_2026           VARCHAR2 PATH '$.erRegelEndring2026'   
          )
         ) j
 ),
@@ -53,6 +54,10 @@ final as (
     ,to_date(p.krav_mottatt,'yyyy-mm-dd') krav_mottatt
     ,p.årsak_revurderings_kilde
     ,p.revurderings_årsak
+    ,CASE 
+      WHEN p.er_regel_endring_2026 = 'false' THEN 0
+      WHEN p.er_regel_endring_2026 = 'true' THEN 1
+    END er_regel_endring_2026
     ,p.aktivitetsvilkaar_barnetilsyn
     ,nvl(ident.fk_person1, -1) as fk_person1
     ,to_date(p.aktivitetsplikt_inntreffer_dato,'yyyy-mm-dd') aktivitetsplikt_inntreffer_dato
@@ -96,6 +101,7 @@ select dvh_famef_kafka.hibernate_sequence.nextval as PK_EF_FAGSAK
   ,BEHANDLINGS_AARSAK
   ,VEDTAKS_STATUS
   ,STONADSTYPE
+  ,er_regel_endring_2026
   ,case when FK_PERSON1 = -1 then PERSON_IDENT
       else cast(null as varchar2(11))
   end PERSON_IDENT
