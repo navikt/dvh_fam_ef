@@ -1,16 +1,14 @@
 dvh_fam_ef:
   target: "{{env_var('DBT_DB_TARGET')}}"
   outputs:
-    knast:
-      host: "{{env_var('DBT_DB_HOST')}}"
-      password: placeholder
-      port: "{{env_var('DBT_DB_PORT')}}"
-      protocol: tcp
-      schema: dvh_fam_ungdom
-      service: "{{env_var('DBT_ENV_SERVICE')}}"
-      database: "{{env_var('DBT_DB_NAME')}}"
-      threads: 8
-      type: oracle
+    knast:      
+      host: "{{env_var('DBT_DB_HOST')}}"      
+      password: placeholder      
+      port: "{{env_var('DBT_DB_PORT')}}"      
+      protocol: tcp      
+      schema: dvh_fam_ef   
+      service: "{{env_var('DBT_ENV_SERVICE')}}"      
+      database: "{{env_var('DBT_DB_NAME')}}"      
+      threads: 8    
+      type: oracle      
       user: "{{env_var('DBT_ENV_SECRET_USER')}}"
-config:
-  send_anonymous_usage_stats: False
