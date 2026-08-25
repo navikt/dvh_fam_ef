@@ -45,7 +45,7 @@ final as (
 )
 
 select
-  dvh_famef_kafka.hibernate_sequence.nextval as PK_ts_vilkarsvurderinger,
+  dvh_fam_ef.hibernate_sequence.nextval as PK_ts_vilkarsvurderinger,
   FK_ts_FAGSAK,
   resultat,
   vilkaar_resultat,

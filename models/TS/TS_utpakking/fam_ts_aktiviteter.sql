@@ -38,7 +38,7 @@ final as (
 )
 
 select
-  dvh_famef_kafka.hibernate_sequence.nextval as PK_ts_aktiviteter,
+  dvh_fam_ef.hibernate_sequence.nextval as PK_ts_aktiviteter,
   FK_ts_FAGSAK,
   RESULTAT,
   type,

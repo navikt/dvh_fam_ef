@@ -49,7 +49,7 @@ final as (
 )
 
 select
-  dvh_famef_kafka.hibernate_sequence.nextval as PK_ts_barn,
+  dvh_fam_ef.hibernate_sequence.nextval as PK_ts_barn,
   FK_ts_FAGSAK,
   case wheN fk_person1 = -1  THEN fnr
       ELSE NULL

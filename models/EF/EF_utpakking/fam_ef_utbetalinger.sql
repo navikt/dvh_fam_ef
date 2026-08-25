@@ -82,7 +82,7 @@ final as (
 )
 
 select
-  dvh_famef_kafka.hibernate_sequence.nextval as PK_EF_UTBETALINGER,
+  dvh_fam_ef.hibernate_sequence.nextval as PK_EF_UTBETALINGER,
   FK_EF_FAGSAK,
   BELOP,
   SAMORDNINGSFRADRAG,

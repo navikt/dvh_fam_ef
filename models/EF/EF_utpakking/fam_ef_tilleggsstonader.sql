@@ -80,7 +80,7 @@ final as (
 )
 
 select
-  dvh_famef_kafka.hibernate_sequence.nextval as pk_ef_tilleggsstonader,
+  dvh_fam_ef.hibernate_sequence.nextval as pk_ef_tilleggsstonader,
   fk_ef_fagsak,
   type_tilleggs_stonad,
   fra_og_med,

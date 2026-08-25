@@ -47,7 +47,7 @@ final as (
 )
 
 select
-  dvh_famef_kafka.hibernate_sequence.nextval as PK_ts_utbetalinger,
+  dvh_fam_ef.hibernate_sequence.nextval as PK_ts_utbetalinger,
   FK_ts_FAGSAK,
   belop
   ,case when BELOP_ER_BEGRENSET_AV_MAKSSATS = 'false' THEN 0

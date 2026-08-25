@@ -50,7 +50,7 @@ final as (
 )
 
 select
-  dvh_famef_kafka.hibernate_sequence.nextval as PK_EF_VEDTAKSPERIODER,
+  dvh_fam_ef.hibernate_sequence.nextval as PK_EF_VEDTAKSPERIODER,
   FK_EF_FAGSAK,
   TO_DATE(FRA_OG_MED, 'YYYY-MM-DD') FRA_OG_MED,
   TO_DATE(TIL_OG_MED, 'YYYY-MM-DD') TIL_OG_MED,

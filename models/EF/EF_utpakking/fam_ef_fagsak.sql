@@ -81,7 +81,7 @@ final as (
   and ident.skjermet_kode = 0
 )
 
-select dvh_famef_kafka.hibernate_sequence.nextval as PK_EF_FAGSAK
+select dvh_fam_ef.hibernate_sequence.nextval as PK_EF_FAGSAK
   ,FK_EF_META_DATA
   ,FK_PERSON1
   ,AKTIVITETSPLIKT_INNTREFFER_DATO

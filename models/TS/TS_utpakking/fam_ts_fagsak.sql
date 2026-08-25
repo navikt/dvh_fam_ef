@@ -58,7 +58,7 @@ final as (
 )
 
 select
-  dvh_famef_kafka.hibernate_sequence.nextval as PK_TS_FAGSAK
+  dvh_fam_ef.hibernate_sequence.nextval as PK_TS_FAGSAK
   ,FAGSAK_ID
   ,behandling_id
   ,ekstern_fagsak_id

@@ -46,7 +46,7 @@ final as (
 )
 
 select
-  dvh_famef_kafka.hibernate_sequence.nextval as PK_EF_DELPERIODE_SKOLE,
+  dvh_fam_ef.hibernate_sequence.nextval as PK_EF_DELPERIODE_SKOLE,
   STUDIE_TYPE,
   to_date(FRA_OG_MED, 'yyyy-mm-dd') FRA_OG_MED,
   to_date(TIL_OG_MED, 'yyyy-mm-dd') TIL_OG_MED,

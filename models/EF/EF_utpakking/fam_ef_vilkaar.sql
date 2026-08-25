@@ -40,7 +40,7 @@ final as (
 )
 
 select
-  dvh_famef_kafka.hibernate_sequence.nextval as PK_EF_VILKÅR,
+  dvh_fam_ef.hibernate_sequence.nextval as PK_EF_VILKÅR,
   FK_EF_FAGSAK,
   VILKAAR,
   RESULTAT,

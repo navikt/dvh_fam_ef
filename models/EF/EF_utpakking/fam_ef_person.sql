@@ -60,7 +60,7 @@ final as (
 )
 
 select
-  dvh_famef_kafka.hibernate_sequence.nextval as PK_EF_PERSON,
+  dvh_fam_ef.hibernate_sequence.nextval as PK_EF_PERSON,
   FK_EF_FAGSAK,
   PERSON_IDENT,
   to_date(TERMINDATO,'yyyy-mm-dd') TERMINDATO,

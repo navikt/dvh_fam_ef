@@ -37,7 +37,7 @@ final as (
 )
 
 select
-  dvh_famef_kafka.hibernate_sequence.nextval as PK_EF_VEDTAKSPERIODER_SKOLE,
+  dvh_fam_ef.hibernate_sequence.nextval as PK_EF_VEDTAKSPERIODER_SKOLE,
   SKOLEAAR,
   MAKS_SATS_FOR_SKOLEAAR,
   localtimestamp AS lastet_dato,

@@ -38,7 +38,7 @@ final as (
 )
 
 select
-  dvh_famef_kafka.hibernate_sequence.nextval as PK_ts_arsaker_opphor
+  dvh_fam_ef.hibernate_sequence.nextval as PK_ts_arsaker_opphor
   ,FK_ts_FAGSAK
   ,aarsak
   ,ekstern_behandling_id

@@ -45,7 +45,7 @@ final as (
 )
 
 select
-  dvh_famef_kafka.hibernate_sequence.nextval as PK_EF_UTGIFTER_SKOLE,
+  dvh_fam_ef.hibernate_sequence.nextval as PK_EF_UTGIFTER_SKOLE,
   to_date(UTGIFTSDATO, 'yyyy-mm-dd') UTGIFTSDATO,
   UTGIFTSBELOP,
   UTBETALTBELOP,
