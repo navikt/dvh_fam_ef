@@ -22,6 +22,7 @@ select * from ef_meta_data,
       )
     )
   ) j
+  where skoleaar is not null
   --where json_value (melding, '$.vedtaksperioder.size()' )> 0
 ),
 
